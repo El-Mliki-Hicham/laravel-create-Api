@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+route::get("data/",[Controller::class,'apiTest']);
+route::get("data/{id}",[Controller::class,'apiTestId']);
