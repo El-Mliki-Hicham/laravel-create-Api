@@ -19,4 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 route::get("data/",[Controller::class,'apiTest']);
+route::post("ajouter",[Controller::class,'saveData']);
 route::get("data/{id}",[Controller::class,'apiTestId']);
