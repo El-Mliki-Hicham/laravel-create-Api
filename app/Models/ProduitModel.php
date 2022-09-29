@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class ProduitModel extends Model
 {
     
-    protected $table = 'api';
-    use HasFactory;
+    protected $table = 'contact';
+
+    protected $fillable =  [ 'FirstName', 'LastName', 'Email', 'Phone'];
+
     public $timestamps=false;
 
 }

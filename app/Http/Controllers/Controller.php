@@ -25,16 +25,19 @@ class Controller extends BaseController
 
     }
     function apiTestId($id){
-        $data = ProduitModel::where("id_produit","=",$id)->get();
+        $data = ProduitModel::where("id","=",$id)->get();
         return $data;
 
     }
 
     function saveData(Request $request){
         
-    $produit = new produitModel ;
-    $produit->nom=$request->nom;
-    $produit->numbre=$request->numbre;
+    $produit = new produitModel;
+    // $produit->id=$request->id;
+    $produit->FirstName=$request->FirstName;
+    $produit->LastName=$request->LastName;
+    $produit->Email=$request->Email;
+    $produit->Phone=$request->Phone;
        $result=$produit->save();
         if ($result) {
             return ['good'];
@@ -43,7 +46,6 @@ class Controller extends BaseController
             return ["not good"];
         }
     }
-
 
 
 }
