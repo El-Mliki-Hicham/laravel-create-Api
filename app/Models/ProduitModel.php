@@ -10,7 +10,7 @@ class ProduitModel extends Model
     
     protected $table = 'contact';
 
-    protected $fillable =  [ 'FirstName', 'LastName', 'Email', 'Phone'];
+    protected $fillable =  [ 'Nom', 'Email', 'Phone'];
 
     public $timestamps=false;
 

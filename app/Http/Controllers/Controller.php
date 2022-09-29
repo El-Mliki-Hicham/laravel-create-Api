@@ -19,12 +19,12 @@ class Controller extends BaseController
     //     return $data;
 
     // }
-    function apiTest(){
+    function GetApi(){
         $data = ProduitModel::all();
         return $data;
 
     }
-    function apiTestId($id){
+    function FindId($id){
         $data = ProduitModel::where("id","=",$id)->get();
         return $data;
 
@@ -34,8 +34,7 @@ class Controller extends BaseController
         
     $produit = new produitModel;
     // $produit->id=$request->id;
-    $produit->FirstName=$request->FirstName;
-    $produit->LastName=$request->LastName;
+    $produit->Nom=$request->Nom;
     $produit->Email=$request->Email;
     $produit->Phone=$request->Phone;
        $result=$produit->save();
@@ -46,6 +45,24 @@ class Controller extends BaseController
             return ["not good"];
         }
     }
+    public function update(Request $request,$id)
+    {
+        //
+        $product=ProduitModel::find($id);
+        $product->update($request->all());
+        return $product;
+
+    }
+    public function Delete($id)
+    {
+        //
+        $product=ProduitModel::find($id);
+        $product->Delete();
+       
+
+    }
+
+    
 
 
 }

@@ -18,6 +18,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-route::get("data",[Controller::class,'apiTest']);
-route::post("ajouter",[Controller::class,'saveData']);
-route::get("data/{id}",[Controller::class,'apiTestId']);
+route::get("data",[Controller::class,'GetApi']);
+route::post("add",[Controller::class,'saveData']);
+route::get("data/{id}",[Controller::class,'FindId']);
+Route::put('/update/{id}',[Controller::class,'update']);
+Route::delete('delete/{id}',[Controller::class,'delete']);
